@@ -1,7 +1,7 @@
 # Django tree-like menu
 ### Describe
 Django app for creating tree-like beautiful ~~only with bootstrap~~ menus
-### Technocology
+### Technology
 Python 3.11
 Django 4.1.4
 ### Start in dev mode
@@ -14,3 +14,4 @@ pip install -r requirements.txt
 ```
 python manage.py runserver
 ```
+### Start in dev mode
