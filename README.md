@@ -1,16 +1,16 @@
-# Анфиса для друзей
-### Описание
-Благодаря этому проекту можно будет угощать мороженым друзей из разных городов.
-### Технологии
-Python 3.7
-Django 2.2.19
-### Запуск проекта в dev-режиме
-- Установите и активируйте виртуальное окружение
-- Установите зависимости из файла requirements.txt
+# Django tree-like menu
+### Describe
+Django app for creating tree-like beautiful ~~only with bootstrap~~ menus
+### Technocology
+Python 3.11
+Django 4.1.4
+### Start in dev mode
+- Install and set environment
+- Install dependencies from requirements.txt
 ```
 pip install -r requirements.txt
 ``` 
-- В папке с файлом manage.py выполните команду:
+- In the folder with manage.py run next command:
 ```
-python3 manage.py runserver
+python manage.py runserver
 ```
