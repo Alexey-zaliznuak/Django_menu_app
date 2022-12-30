@@ -1,3 +1,5 @@
+from django.template import loader
+
 html = str
 
 PX_MARGIN_LEFT = 40
@@ -14,19 +16,25 @@ class ResourceCard():
     @property
     def render(self) -> html:
         res = self.res
-        url = res.absolute_url
+        child_html = ''
         horizontal_margin = res.level * PX_MARGIN_LEFT
-
-        result = '<div>'
-        result += (
-            '<a class="btn btn-primary"'
-            + f'style="margin: {PX_VERTICAL_MARGIN}px {horizontal_margin}px" '
-            + f'href="{url}"'
-            + f'role="button">{url}</a> '
-        )
 
         if self.render_child:
             for child in res.children.all():
-                result += child.render(self.request, self.active_res_parents)
+                child_html += child.render(
+                    self.request,
+                    self.active_res_parents
+                )
 
-        return result + '</div>'
+        context = {
+            'vertical_margin': PX_VERTICAL_MARGIN,
+            'horizontal_margin': horizontal_margin,
+            'url': res.absolute_url,
+            'child_html': child_html,
+        }
+        render = loader.render_to_string(
+            'resource_card.html',
+            context
+        )
+
+        return render

@@ -1,4 +1,4 @@
-from django.template import Library, loader, Template
+from django.template import Library, loader
 from ..models import Menu
 from django.utils.safestring import mark_safe
 
