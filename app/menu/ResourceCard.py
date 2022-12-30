@@ -16,6 +16,7 @@ class ResourceCard():
     @property
     def render(self) -> html:
         res = self.res
+        url = res.absolute_url
         child_html = ''
         horizontal_margin = res.level * PX_MARGIN_LEFT
 
@@ -29,8 +30,9 @@ class ResourceCard():
         context = {
             'vertical_margin': PX_VERTICAL_MARGIN,
             'horizontal_margin': horizontal_margin,
-            'url': res.absolute_url,
+            'url': url,
             'child_html': child_html,
+            'is_active': url == self.request.path
         }
         render = loader.render_to_string(
             'resource_card.html',

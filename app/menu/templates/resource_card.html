@@ -1,6 +1,6 @@
 <div>
-    <a 
-    class="btn btn-primary"
+    <a
+    class="btn {% if is_active %}btn-success{% else %}btn-primary{% endif %}"
     style="margin: {{ vertical_margin }}px {{ horizontal_margin }}px"
     href="{{ url }}"
     role="button">
