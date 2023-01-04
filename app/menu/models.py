@@ -36,7 +36,7 @@ class Menu(models.Model):
 class Resource(models.Model):
     id = models.AutoField(primary_key=True)
     url = models.CharField(
-        "Сссылка на ресурс(возможны пространства имен)",
+        "Ссылка на ресурс(возможны пространства имен)",
         max_length=1000
     )
     parent = models.ForeignKey(
